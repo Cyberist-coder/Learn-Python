@@ -234,7 +234,7 @@ textarea {
     background: #222
 }
 
-.help-link {
+.help-link-1 {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -251,7 +251,24 @@ textarea {
     transition: color 0.2s ease-in-out 0s
 }
 
-.help-link:hover {
+.help-link-2 {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    background-color: #333;
+    color: #bbb;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: color 0.2s ease-in-out 0s;
+    -moz-transition: color 0.2s ease-in-out 0s;
+    -o-transition: color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s
+}
+
+.help-link-1 .help-link-2:hover {
     color: #fff
 }
 
@@ -401,7 +418,7 @@ h1 {
     z-index: 10
 }
 
-.tabs a.selected {
+.tabs a {
     z-index: 20;
     color: #fff;
     background-color: #327fc7;
@@ -763,10 +780,11 @@ footer {
     line-height: 1.5;
     color: #777;
     clear: both;
-    width: 180px;
+    width: auto;
     padding: 0px 0;
     margin: 0px auto 0 auto;
-    border-top: 1px solid #eee
+    border-top: 1px solid #eee;
+    text-align: center;
 }
 
 .site-footer-links li {

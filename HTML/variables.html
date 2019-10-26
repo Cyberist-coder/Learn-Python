@@ -2,12 +2,12 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Other-editors--Cyberist</title>
+<title>Python variables</title>
+<link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
 
 <style type="text/css">
@@ -13078,61 +13078,216 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;">&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;<a class="anchor-link" href="#&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;">&#182;</a></h2><p>下面推荐的这些软件安装十分简易，只需运行对应的exe文件即可安装，这里不再赘述
- <hr></p>
-<h3 id="1.-Pycharm">1. Pycharm<a class="anchor-link" href="#1.-Pycharm">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026093713358.png" width='600' alt="Pycharm"/></p>
-<p><br></p>
-<p>访问 <a href="https://www.jetbrains.com/pycharm/">官网</a> 进行安装，社区版免费</p>
-<hr>
+<h3 id="Python&#21464;&#37327;&#30340;&#20351;&#29992;">Python&#21464;&#37327;&#30340;&#20351;&#29992;<a class="anchor-link" href="#Python&#21464;&#37327;&#30340;&#20351;&#29992;">&#182;</a></h3><ul>
+<li><a href ="#1">变量和类型</a></li>
+<li><a href ="#2">变量命名规则</a></li>
+<li><a href ="#3">变量的简单使用</a></li>
+<li><a href ="#4">运算符号的使用</a></li>
+<li><a href ="#5">练习</a></li>
+</ul>
+<h4 id="1.-&#21464;&#37327;&#21644;&#31867;&#22411;">1. <span id="1">&#21464;&#37327;&#21644;&#31867;&#22411;</span><a class="anchor-link" href="#1.-&#21464;&#37327;&#21644;&#31867;&#22411;">&#182;</a></h4><p>在程序设计中，变量是一种存储数据的载体。计算机中的变量是实际存在的数据，在内存中占据一定的空间，与常量不同的是，变量可以进行修改。下面介绍几种常见的数据类型：</p>
+<ul>
+<li>整型:Python中的整型，与C/C++等语言不同，它可以处理任意大的整数，而且可以支持多中进制的数据，比如二进制，八进制，十六进制等。</li>
+<li>浮点数：浮点数通俗意义上来讲，可以认为是小数，可以使用科学计数法(如20.19e10)</li>
+<li>字符串型：字符串类型的数据是用单引号或者双引号括起来的数据，有多种表达方式。</li>
+<li>布尔型：布尔型数据只有两种状态，True和False</li>
+<li>复数型：在Python中复数的表现方式和数学中的稍有不同，在Python中是用j来表示虚部(如:2+4j)</li>
+</ul>
+<h4 id="2.-&#21464;&#37327;&#21629;&#21517;&#35268;&#21017;">2. <span id="2">&#21464;&#37327;&#21629;&#21517;&#35268;&#21017;</span><a class="anchor-link" href="#2.-&#21464;&#37327;&#21629;&#21517;&#35268;&#21017;">&#182;</a></h4><p>类似其它语言一样，在Python中变量的命名也不是随意的，必须要遵守一定的规则。</p>
+<ul>
+<li>硬性规则：<ul>
+<li>变量名由字母、数字和下划线构成，且开头不能为数字</li>
+<li>大小写敏感，同一字母的大小写代表不同的变量</li>
+<li>不能为关键字和系统保留字</li>
+</ul>
+</li>
+<li>PEP 8要求：<ul>
+<li>用小写字母拼写，多个单词用下划线连接。</li>
+<li>受保护的实例属性用单个下划线开头。</li>
+<li>私有的实例属性用两个下划线开头</li>
+</ul>
+</li>
+</ul>
+<h4 id="3.-&#21464;&#37327;&#30340;&#31616;&#21333;&#20351;&#29992;">3. <span id="3">&#21464;&#37327;&#30340;&#31616;&#21333;&#20351;&#29992;</span><a class="anchor-link" href="#3.-&#21464;&#37327;&#30340;&#31616;&#21333;&#20351;&#29992;">&#182;</a></h4><p>下面利用示例来说明变量的命名和使用</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">利用变量来进行数据的保存以及数据之间的运算</span>
+<span class="sd">Author: Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">var_1</span> <span class="o">=</span> <span class="mi">2019</span>
+<span class="n">var_2</span> <span class="o">=</span> <span class="mi">2020</span>
 
-<h3 id="2.-Vscode">2. Vscode<a class="anchor-link" href="#2.-Vscode">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026093302339.png" width='600' alt="Vscode"/>
-<br></p>
-<p>访问 <a href="https://code.visualstudio.com/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="3.-Visual-Studio">3. Visual Studio<a class="anchor-link" href="#3.-Visual-Studio">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094820429.png" width='600' alt="Visual Studio"/>
-<br></p>
-<p>访问 <a href="https://visualstudio.microsoft.com/zh-hans/vs/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="4.-Sublime-Text">4. Sublime Text<a class="anchor-link" href="#4.-Sublime-Text">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094019480.png" width='600' alt="Sublime Text"/>
-<br></p>
-<p>访问 <a href="http://www.sublimetext.com/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="5.-Jupyter">5. Jupyter<a class="anchor-link" href="#5.-Jupyter">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094422749.png" width='600' alt="Jupyter"/>
-<br></p>
-<p>使用pip安装即可</p>
-<div class="highlight"><pre><span></span>pip install jupyter
-pip install notebook
+<span class="k">print</span><span class="p">(</span><span class="n">var_1</span> <span class="o">+</span> <span class="n">var_2</span><span class="p">)</span>  <span class="c1"># 加法</span>
+<span class="k">print</span><span class="p">(</span><span class="n">var_1</span> <span class="o">-</span> <span class="n">var_2</span><span class="p">)</span>  <span class="c1"># 减法</span>
+<span class="k">print</span><span class="p">(</span><span class="n">var_1</span> <span class="o">*</span> <span class="n">var_2</span><span class="p">)</span>  <span class="c1"># 乘法</span>
+<span class="k">print</span><span class="p">(</span><span class="n">var_1</span> <span class="o">/</span> <span class="n">var_2</span><span class="p">)</span>  <span class="c1"># 除法</span>
+<span class="k">print</span><span class="p">(</span><span class="n">var_1</span> <span class="o">//</span> <span class="n">var_2</span><span class="p">)</span> <span class="c1"># 取商</span>
+<span class="k">print</span><span class="p">(</span><span class="n">var_1</span> <span class="o">%</span> <span class="n">var_2</span><span class="p">)</span>  <span class="c1"># 取余</span>
 </pre></div>
-<hr>
-
-<h4 id="&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;">&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;<a class="anchor-link" href="#&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;">&#182;</a></h4><p><br></p>
-<ul>
-<li>打开vscode，在扩展(extensions)里面搜索Python，安装如图所示扩展</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191026095537634.png" width='600' alt="Vscode"/></p>
-<ul>
-<li>新建一个文件，我们命名为 <em>test.py</em>, 注意后缀要正确</li>
-</ul>
-<p>输入</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<p>注：<code>print</code>是Python中的一个内置函数，可以输出对应的结果</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">利用type函数来检查变量的类型</span>
+<span class="sd">Author: Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1j</span>  <span class="c1"># 如果是虚部是1，必须也写上</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># &lt;class &#39;int&#39;&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="c1"># &lt;class &#39;float&#39;&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="c1"># &lt;class &#39;complex&#39;&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="c1"># &lt;class &#39;str&#39;&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="c1"># &lt;class &#39;bool&#39;&gt;</span>
 </pre></div>
-<p><img src="https://img-blog.csdnimg.cn/20191026100550190.png" width='600' alt="Vscode"/></p>
+<p>类型C/C++中变量类型中的转换，Python中也有对应的函数：</p>
 <ul>
-<li>点击右上角的三角形符号，进行运行，如图所示，运行成功，环境配置完成</li>
+<li><code>int()</code>：将一个数值或字符串转换成整数，可以指定进制。</li>
+<li><code>float()</code>：将一个字符串转换成浮点数。</li>
+<li><code>str()</code>：将指定的对象转换成字符串形式，可以指定编码。</li>
+<li><code>chr()</code>：将整数转换成该编码对应的字符串（一个字符）。</li>
+<li><code>ord()</code>：将字符串（一个字符）转换成对应的ASSIC编码</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20191026101423409.png" width='600' alt="Vscode"/></p>
+<p>下面的代码可以使用对输入的数据进行运算</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">对输入的数据进行运算</span>
+<span class="sd">Author: Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input a integer: &quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input a number: &quot;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> + </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> - </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> * </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> / </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> // </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> </span><span class="si">%%</span><span class="s1"> </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> ** </span><span class="si">%d</span><span class="s1"> = </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+<blockquote><p>上面使用的是占位符，%d-&gt;整数，%f-&gt;小数，%%-&gt;%(类似转义), 当然可以使用Python内置的<code>format()</code>函数
+具体用法以后将会提到</p>
+</blockquote>
+<h4 id="4.-&#36816;&#31639;&#31526;&#21495;&#30340;&#20351;&#29992;">4. <span id="4">&#36816;&#31639;&#31526;&#21495;&#30340;&#20351;&#29992;</span><a class="anchor-link" href="#4.-&#36816;&#31639;&#31526;&#21495;&#30340;&#20351;&#29992;">&#182;</a></h4><p>Python支持多种运算符，我们可以将它作为计算机使用，下表是常用的运算符</p>
+<table>
+<thead><tr>
+<th style="text-align:center">运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>[]</code> <code>[:]</code></td>
+<td>下标，切片</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>**</code></td>
+<td>指数</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>~</code> <code>+</code> <code>-</code></td>
+<td>按位取反, 正负号</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code> <code>/</code> <code>%</code> <code>//</code></td>
+<td>乘，除，模，整除</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code> <code>-</code></td>
+<td>加，减</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;&gt;</code> <code>&lt;&lt;</code></td>
+<td>右移，左移</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&amp;</code></td>
+<td>按位与</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>^</code> <code>|</code></td>
+<td>按位异或，按位或</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;=</code> <code>&lt;</code> <code>&gt;</code> <code>&gt;=</code></td>
+<td>小于等于，小于，大于，大于等于</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>==</code> <code>!=</code></td>
+<td>等于，不等于</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>is</code>  <code>is not</code></td>
+<td>身份运算符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>in</code> <code>not in</code></td>
+<td>成员运算符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>not</code> <code>or</code> <code>and</code></td>
+<td>逻辑运算符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>//=</code> <code>**=</code> <code>&amp;=</code> `</td>
+<td>=<code>`^=</code> <code>&gt;&gt;=</code> <code>&lt;&lt;=</code></td>
+<td>（复合）赋值运算符</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>如果在实际的开发中不清楚运算符的优先级别，我们可以使用括号来保证正确性</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">使用运算符 </span>
+<span class="sd">Author:Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">var_1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">var_2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="n">b</span> <span class="c1"># &lt;=&gt; a = a + b</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># &lt;=&gt; a = a * (a + b)</span>
+
+
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="n">flag_1</span> <span class="o">=</span> <span class="s2">&quot;He&quot;</span> <span class="ow">in</span> <span class="nb">str</span>
+
+<span class="n">flag_2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span>
+
+<span class="n">flag_3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span>
+
+<span class="n">flag_4</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">flag_3</span>
+
+<span class="n">flag_5</span> <span class="o">=</span> <span class="n">flag_4</span> <span class="ow">is</span> <span class="bp">True</span>
+
+<span class="n">flag_6</span> <span class="o">=</span> <span class="n">flag_4</span> <span class="ow">and</span> <span class="n">flag_5</span>
+
+<span class="n">flag_6</span> <span class="o">=</span> <span class="n">flag_5</span> <span class="ow">or</span> <span class="n">flag_5</span>
+</pre></div>
+<blockquote><p>以上运算结果希望读者自己动手解决</p>
+</blockquote>
 <hr>
 
-<p>关注公众号，即时学习Python</p>
-<p><img src='https://img-blog.csdnimg.cn/20191026101500225.bmp' width="400" align="left"/></p>
+<h4 id="&#32451;&#20064;"><span id="5">&#32451;&#20064;</span><a class="anchor-link" href="#&#32451;&#20064;">&#182;</a></h4><ol>
+<li>计算正方形的面积和周长
+<em>Answer :</em></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Author:Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input the length of the sqare: &quot;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Area: &quot;</span><span class="p">,</span> <span class="n">length</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Perimeter: &quot;</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">length</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>判断某一年是闰年否
+<em>Answer :</em>
+```python
+"""
+Author: Cyberist
+"""
+year = int(input("Please input a year: "))
+is_leap = (year % 4 == 0 and year % 100 != 0) or year % 400 == 0
+print(is_leap)</li>
+</ol>
+<p>```</p>
+<hr>
+
 
 </div>
 </div>

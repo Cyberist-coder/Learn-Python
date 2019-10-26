@@ -2,12 +2,12 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Other-editors--Cyberist</title>
+<title>Numpy</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+
 
 
 <style type="text/css">
@@ -13078,61 +13078,529 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;">&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;<a class="anchor-link" href="#&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;">&#182;</a></h2><p>下面推荐的这些软件安装十分简易，只需运行对应的exe文件即可安装，这里不再赘述
- <hr></p>
-<h3 id="1.-Pycharm">1. Pycharm<a class="anchor-link" href="#1.-Pycharm">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026093713358.png" width='600' alt="Pycharm"/></p>
-<p><br></p>
-<p>访问 <a href="https://www.jetbrains.com/pycharm/">官网</a> 进行安装，社区版免费</p>
-<hr>
-
-<h3 id="2.-Vscode">2. Vscode<a class="anchor-link" href="#2.-Vscode">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026093302339.png" width='600' alt="Vscode"/>
-<br></p>
-<p>访问 <a href="https://code.visualstudio.com/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="3.-Visual-Studio">3. Visual Studio<a class="anchor-link" href="#3.-Visual-Studio">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094820429.png" width='600' alt="Visual Studio"/>
-<br></p>
-<p>访问 <a href="https://visualstudio.microsoft.com/zh-hans/vs/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="4.-Sublime-Text">4. Sublime Text<a class="anchor-link" href="#4.-Sublime-Text">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094019480.png" width='600' alt="Sublime Text"/>
-<br></p>
-<p>访问 <a href="http://www.sublimetext.com/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="5.-Jupyter">5. Jupyter<a class="anchor-link" href="#5.-Jupyter">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094422749.png" width='600' alt="Jupyter"/>
-<br></p>
-<p>使用pip安装即可</p>
-<div class="highlight"><pre><span></span>pip install jupyter
-pip install notebook
+<h1 id="NumPy-&#30340;&#20351;&#29992;">NumPy &#30340;&#20351;&#29992;<a class="anchor-link" href="#NumPy-&#30340;&#20351;&#29992;">&#182;</a></h1><ul>
+<li><a href="#1">安装方法</a></li>
+<li><a href="#2">使用方法</a></li>
+<li><a href="#3">dtype选项</a></li>
+<li><a href="#4">其他创建数组的方式</a></li>
+<li><a href="#5">基本运算</a></li>
+<li><a href="#6">矩阵运算</a></li>
+<li><a href="#7">函数使用</a></li>
+<li><a href="#8">索引，切片，迭代</a></li>
+<li><a href="#9">条件和布尔数组</a></li>
+<li><a href="#10">数组的形状操作</a></li>
+<li><a href="#11">数组操作</a></li>
+<li><a href="#11">其他的一般概念</a></li>
+</ul>
+<blockquote><p><strong>NumPy is a basic package for scientific computing with Python and especially for data analysis. In fact, this library is the basis of a large amount of mathematical and scientific Python packages， with its powerful support，we can do a lot of things</strong></p>
+</blockquote>
+<h3 id="1.-&#23433;&#35013;&#26041;&#27861;">1. <span id="1">&#23433;&#35013;&#26041;&#27861;</span><a class="anchor-link" href="#1.-&#23433;&#35013;&#26041;&#27861;">&#182;</a></h3><div class="highlight"><pre><span></span>sudo apt-get install python-numpy <span class="c1"># Ubuntu or Debian</span>
 </pre></div>
-<hr>
-
-<h4 id="&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;">&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;<a class="anchor-link" href="#&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;">&#182;</a></h4><p><br></p>
-<ul>
-<li>打开vscode，在扩展(extensions)里面搜索Python，安装如图所示扩展</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191026095537634.png" width='600' alt="Vscode"/></p>
-<ul>
-<li>新建一个文件，我们命名为 <em>test.py</em>, 注意后缀要正确</li>
-</ul>
-<p>输入</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span>pip install numpy <span class="c1"># Windows</span>
 </pre></div>
-<p><img src="https://img-blog.csdnimg.cn/20191026100550190.png" width='600' alt="Vscode"/></p>
-<ul>
-<li>点击右上角的三角形符号，进行运行，如图所示，运行成功，环境配置完成</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191026101423409.png" width='600' alt="Vscode"/></p>
-<hr>
+<div class="highlight"><pre><span></span>conda install numpy  <span class="c1"># Anaconda</span>
+</pre></div>
+<h3 id="2.-&#20351;&#29992;&#26041;&#27861;">2. <span id="2">&#20351;&#29992;&#26041;&#27861;</span><a class="anchor-link" href="#2.-&#20351;&#29992;&#26041;&#27861;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> <span class="c1"># 导入库</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># 创建最简单的一维数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span> <span class="c1"># 获取数组中的元素个数</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">itemsize</span> <span class="c1"># 返还数组的每个元素所占字节数</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span> <span class="c1"># 获取数组的维度</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># 获取数组的形状，返回类型为元组</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span> <span class="c1"># 返回数组的数据类型</span>
+<span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
 
-<p>关注公众号，即时学习Python</p>
-<p><img src='https://img-blog.csdnimg.cn/20191026101500225.bmp' width="400" align="left"/></p>
+<span class="c1"># 当然也可以创建多维数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mf">3.4</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">size</span>
+<span class="mi">6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">itemsize</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">ndim</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">dtype</span>
+<span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+</pre></div>
+<h3 id="3.-dtype-&#36873;&#39033;">3. <span id="3">dtype &#36873;&#39033;</span><a class="anchor-link" href="#3.-dtype-&#36873;&#39033;">&#182;</a></h3><table>
+<thead><tr>
+<th>Data Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool_</td>
+<td style="text-align:left">boolean (true or false) stored as a byte</td>
+</tr>
+<tr>
+<td>int_</td>
+<td style="text-align:left">Default integer type (same as C long; normally either int64 or int32)</td>
+</tr>
+<tr>
+<td>intc</td>
+<td style="text-align:left">identical to C int (normally int32 or int64)</td>
+</tr>
+<tr>
+<td>intp</td>
+<td style="text-align:left">integer used for indexing (same as C size_t; normally either int32 or int64)</td>
+</tr>
+<tr>
+<td>int8</td>
+<td style="text-align:left">byte (–128 to 127)</td>
+</tr>
+<tr>
+<td>int16</td>
+<td style="text-align:left">integer (–32768 to 32767)</td>
+<td>int32</td>
+<td>integer (–2147483648 to 2147483647)</td>
+</tr>
+<tr>
+<td>int64</td>
+<td style="text-align:left">integer (–9223372036854775808 to 9223372036854775807)</td>
+</tr>
+<tr>
+<td>uint8</td>
+<td style="text-align:left">unsigned integer (0 to 255) uint16 unsigned integer (0 to 65535)</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td style="text-align:left">unsigned integer (0 to 4294967295)</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td style="text-align:left">unsigned integer (0 to 18446744073709551615)</td>
+</tr>
+<tr>
+<td>float_</td>
+<td style="text-align:left">Shorthand for float64</td>
+</tr>
+<tr>
+<td>float16</td>
+<td style="text-align:left">half precision float: sign bit, 5-bit exponent, 10-bit mantissa</td>
+</tr>
+<tr>
+<td>float32</td>
+<td style="text-align:left">Single precision float: sign bit, 8-bit exponent, 23-bit mantissa</td>
+</tr>
+<tr>
+<td>float64</td>
+<td style="text-align:left">Double precision float: sign bit, 11-bit exponent, 52-bit mantissa </td>
+</tr>
+<tr>
+<td>complex_</td>
+<td style="text-align:left">Shorthand for complex128</td>
+</tr>
+<tr>
+<td>complex64</td>
+<td style="text-align:left">Complex number, represented by two 32-bit floats (real and imaginary components)</td>
+</tr>
+<tr>
+<td>complex128</td>
+<td style="text-align:left">Complex number, represented by two 64-bit floats (real and imaginary components)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><span class="c1"># 在使用array的时候可以指定dtype类型</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span> <span class="mf">2.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span> <span class="mf">3.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">])</span>
+</pre></div>
+<h3 id="4.-&#20854;&#20182;&#21019;&#24314;&#25968;&#32452;&#30340;&#26041;&#24335;">4. <span id="4">&#20854;&#20182;&#21019;&#24314;&#25968;&#32452;&#30340;&#26041;&#24335;</span><a class="anchor-link" href="#4.-&#20854;&#20182;&#21019;&#24314;&#25968;&#32452;&#30340;&#26041;&#24335;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1"># 创建元素全为0的指定大小数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
+<span class="c1"># 创建元素全为1的指定大小数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]])</span>
+<span class="c1"># 创建一个顺序数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="c1"># linspace(start, end, elem_num)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">0.</span> <span class="p">,</span>  <span class="mf">2.5</span><span class="p">,</span>  <span class="mf">5.</span> <span class="p">,</span>  <span class="mf">7.5</span><span class="p">,</span> <span class="mf">10.</span> <span class="p">])</span>
+<span class="c1"># 创建随机数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.96215695</span><span class="p">,</span> <span class="mf">0.64629081</span><span class="p">,</span> <span class="mf">0.86759819</span><span class="p">,</span> <span class="mf">0.90073058</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.27513149</span><span class="p">,</span> <span class="mf">0.11492121</span><span class="p">,</span> <span class="mf">0.3915962</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.08766173</span><span class="p">,</span> <span class="mf">0.46365986</span><span class="p">,</span> <span class="mf">0.0249593</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.42738941</span><span class="p">,</span> <span class="mf">0.00530375</span><span class="p">,</span> <span class="mf">0.48070045</span><span class="p">]])</span>
+<span class="c1"># reshape函数变化数组形状，但元素数目不变</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
+</pre></div>
+<h3 id="5.-&#22522;&#26412;&#36816;&#31639;">5. <span id="5">&#22522;&#26412;&#36816;&#31639;</span><a class="anchor-link" href="#5.-&#22522;&#26412;&#36816;&#31639;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">4</span>  <span class="c1"># 全部元素 + 4</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># 全部元素 *2</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># 相对应的位置相加</span>
+<span class="n">array</span><span class="p">([</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>  <span class="c1"># 相对应的位置相减</span>
+<span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>  <span class="c1"># 相对应的位置相乘</span>
+<span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 这里只能使用np中的sin</span>
+<span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.</span>        <span class="p">,</span> <span class="o">-</span><span class="mf">0.95892427</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.558831</span>  <span class="p">,</span>  <span class="mf">1.9709598</span> <span class="p">])</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.</span>        <span class="p">,</span> <span class="mf">2.23606798</span><span class="p">,</span> <span class="mf">4.89897949</span><span class="p">,</span> <span class="mf">7.93725393</span><span class="p">])</span>
+</pre></div>
+<h3 id="6.-&#30697;&#38453;&#36816;&#31639;">6. <span id="6">&#30697;&#38453;&#36816;&#31639;</span><a class="anchor-link" href="#6.-&#30697;&#38453;&#36816;&#31639;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1"># 矩阵乘法</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">36</span><span class="p">,</span>  <span class="mi">42</span><span class="p">,</span>  <span class="mi">18</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">81</span><span class="p">,</span>  <span class="mi">96</span><span class="p">,</span>  <span class="mi">51</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">126</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span>  <span class="mi">84</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">36</span><span class="p">,</span>  <span class="mi">42</span><span class="p">,</span>  <span class="mi">18</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">81</span><span class="p">,</span>  <span class="mi">96</span><span class="p">,</span>  <span class="mi">51</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">126</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span>  <span class="mi">84</span><span class="p">]])</span>
+</pre></div>
+<h3 id="7.-&#20989;&#25968;&#20351;&#29992;">7. <span id="7">&#20989;&#25968;&#20351;&#29992;</span><a class="anchor-link" href="#7.-&#20989;&#25968;&#20351;&#29992;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1"># ------------------------一般函数------------------------</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">1.</span>        <span class="p">,</span> <span class="mf">1.41421356</span><span class="p">,</span> <span class="mf">1.73205081</span><span class="p">,</span> <span class="mf">2.</span>        <span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">0.84147098</span><span class="p">,</span>  <span class="mf">0.90929743</span><span class="p">,</span>  <span class="mf">0.14112001</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7568025</span> <span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.</span>        <span class="p">,</span> <span class="mf">0.69314718</span><span class="p">,</span> <span class="mf">1.09861229</span><span class="p">,</span> <span class="mf">1.38629436</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">0.54030231</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.41614684</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9899925</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.65364362</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">1.55740772</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.18503986</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14254654</span><span class="p">,</span>  <span class="mf">1.15782128</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.76159416</span><span class="p">,</span> <span class="mf">0.96402758</span><span class="p">,</span> <span class="mf">0.99505475</span><span class="p">,</span> <span class="mf">0.9993293</span> <span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">1.17520119</span><span class="p">,</span>  <span class="mf">3.62686041</span><span class="p">,</span> <span class="mf">10.01787493</span><span class="p">,</span> <span class="mf">27.2899172</span> <span class="p">])</span>
+
+<span class="c1"># ------------------------聚合函数-------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">5.7</span><span class="p">,</span><span class="mf">0.3</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># 所有元素之和</span>
+<span class="mf">15.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>  <span class="c1"># 最小元素</span>
+<span class="mf">0.3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>  <span class="c1"># 最大元素</span>
+<span class="mf">5.7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># 平均值</span>
+<span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># 方差</span>
+<span class="mf">2.0079840636817816</span>
+</pre></div>
+<h3 id="8.-&#32034;&#24341;&#65292;&#20999;&#29255;&#65292;&#36845;&#20195;">8. <span id="8">&#32034;&#24341;&#65292;&#20999;&#29255;&#65292;&#36845;&#20195;</span><a class="anchor-link" href="#8.-&#32034;&#24341;&#65292;&#20999;&#29255;&#65292;&#36845;&#20195;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1"># ------------------------索引-----------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="mi">14</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 倒数第一个</span>
+<span class="mi">15</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 倒数第6个</span>
+<span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>  <span class="c1"># 取第2,4,5个</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 取第2行第3列的数据</span>
+<span class="mi">15</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># -------------------------切片------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># 取第2到第5个元素</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># 从第2到第5个元素中隔2取一个</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># 每隔2取一个元素</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[:</span><span class="mi">5</span><span class="p">:]</span> <span class="c1"># 取前5个元素</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>  <span class="c1"># 取第一行数据</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 取第一列数据</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 取1到2行并且1到2列的数据</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># 取指定行1,3的数据并取其中的前两个</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">]])</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># -----------------------迭代-------------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>  <span class="c1"># 一维数组迭代，输出每一个数据</span>
+<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="mi">10</span>
+<span class="mi">11</span>
+<span class="mi">12</span>
+<span class="mi">13</span>
+<span class="mi">14</span>
+<span class="mi">15</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>  <span class="c1"># 二维数组这样迭代每次输出每一行</span>
+<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="p">[</span><span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>  <span class="c1"># 可每次打印出A中每一个元素</span>
+<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="mi">10</span>
+<span class="mi">11</span>
+<span class="mi">12</span>
+<span class="mi">13</span>
+<span class="mi">14</span>
+<span class="mi">15</span>
+<span class="mi">16</span>
+<span class="mi">17</span>
+<span class="mi">18</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># ---------------------聚合函数------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">A</span><span class="p">)</span> <span class="c1"># apply_along_axis接三个参数，第一个为函数名称，第二个为轴，0代表横轴，1代表列，第三个为数组名</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">14.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">A</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">11.</span><span class="p">,</span> <span class="mf">14.</span><span class="p">,</span> <span class="mf">17.</span><span class="p">])</span>
+
+<span class="c1"># 当然也可以利用自己构建的函数</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">arr</span><span class="o">=</span><span class="n">A</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">5.</span> <span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.</span> <span class="p">,</span> <span class="mf">7.5</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">8.</span> <span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mf">9.</span> <span class="p">]])</span>
+</pre></div>
+<h3 id="9.-&#26465;&#20214;&#21644;&#24067;&#23572;&#25968;&#32452;">9. <span id="9">&#26465;&#20214;&#21644;&#24067;&#23572;&#25968;&#32452;</span><a class="anchor-link" href="#9.-&#26465;&#20214;&#21644;&#24067;&#23572;&#25968;&#32452;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>    <span class="n">array</span><span class="p">([[</span><span class="mf">0.77114544</span><span class="p">,</span> <span class="mf">0.08274154</span><span class="p">,</span> <span class="mf">0.3380893</span> <span class="p">,</span> <span class="mf">0.09124811</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.38458493</span><span class="p">,</span> <span class="mf">0.04101999</span><span class="p">,</span> <span class="mf">0.5752505</span> <span class="p">,</span> <span class="mf">0.36101901</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.281558</span>  <span class="p">,</span> <span class="mf">0.17994346</span><span class="p">,</span> <span class="mf">0.5637831</span> <span class="p">,</span> <span class="mf">0.82207882</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.87628886</span><span class="p">,</span> <span class="mf">0.84768998</span><span class="p">,</span> <span class="mf">0.9459325</span> <span class="p">,</span> <span class="mf">0.93927827</span><span class="p">]])</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">&lt;</span> <span class="mf">0.5</span>  <span class="c1"># 符合条件的被视为True    array([[False,  True,  True,  True],</span>
+          <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
+          <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
+          <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]])</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">[</span><span class="n">A</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">]</span> <span class="c1"># 挑选出符合条件的    array([0.08274154, 0.3380893 , 0.09124811, 0.38458493, 0.04101999,</span>
+          <span class="mf">0.36101901</span><span class="p">,</span> <span class="mf">0.281558</span>  <span class="p">,</span> <span class="mf">0.17994346</span><span class="p">])</span>
+</pre></div>
+<h3 id="10.-&#25968;&#32452;&#30340;&#24418;&#29366;&#25805;&#20316;">10. <span id="10">&#25968;&#32452;&#30340;&#24418;&#29366;&#25805;&#20316;</span><a class="anchor-link" href="#10.-&#25968;&#32452;&#30340;&#24418;&#29366;&#25805;&#20316;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>    
+   <span class="n">array</span><span class="p">([</span><span class="mf">0.79770216</span><span class="p">,</span> <span class="mf">0.56088829</span><span class="p">,</span> <span class="mf">0.82827561</span><span class="p">,</span> <span class="mf">0.77196219</span><span class="p">,</span> <span class="mf">0.98281623</span><span class="p">,</span>
+          <span class="mf">0.69956778</span><span class="p">,</span> <span class="mf">0.11579138</span><span class="p">,</span> <span class="mf">0.22625572</span><span class="p">,</span> <span class="mf">0.13765588</span><span class="p">,</span> <span class="mf">0.13327294</span><span class="p">,</span>
+          <span class="mf">0.5892318</span> <span class="p">,</span> <span class="mf">0.55351276</span><span class="p">])</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># 返回一个自定义的形状的数组，数组内容保持不变，形状改变</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>    
+   <span class="n">array</span><span class="p">([[</span><span class="mf">0.79770216</span><span class="p">,</span> <span class="mf">0.56088829</span><span class="p">,</span> <span class="mf">0.82827561</span><span class="p">,</span> <span class="mf">0.77196219</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.98281623</span><span class="p">,</span> <span class="mf">0.69956778</span><span class="p">,</span> <span class="mf">0.11579138</span><span class="p">,</span> <span class="mf">0.22625572</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.13765588</span><span class="p">,</span> <span class="mf">0.13327294</span><span class="p">,</span> <span class="mf">0.5892318</span> <span class="p">,</span> <span class="mf">0.55351276</span><span class="p">]])</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 直接改变本身的形状</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>    
+   <span class="n">array</span><span class="p">([[</span><span class="mf">0.79770216</span><span class="p">,</span> <span class="mf">0.56088829</span><span class="p">,</span> <span class="mf">0.82827561</span><span class="p">,</span> <span class="mf">0.77196219</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.98281623</span><span class="p">,</span> <span class="mf">0.69956778</span><span class="p">,</span> <span class="mf">0.11579138</span><span class="p">,</span> <span class="mf">0.22625572</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.13765588</span><span class="p">,</span> <span class="mf">0.13327294</span><span class="p">,</span> <span class="mf">0.5892318</span> <span class="p">,</span> <span class="mf">0.55351276</span><span class="p">]])</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>  <span class="c1"># 将2维数组变为一维数组</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>    
+   <span class="n">array</span><span class="p">([</span><span class="mf">0.79770216</span><span class="p">,</span> <span class="mf">0.56088829</span><span class="p">,</span> <span class="mf">0.82827561</span><span class="p">,</span> <span class="mf">0.77196219</span><span class="p">,</span> <span class="mf">0.98281623</span><span class="p">,</span>
+          <span class="mf">0.69956778</span><span class="p">,</span> <span class="mf">0.11579138</span><span class="p">,</span> <span class="mf">0.22625572</span><span class="p">,</span> <span class="mf">0.13765588</span><span class="p">,</span> <span class="mf">0.13327294</span><span class="p">,</span>
+          <span class="mf">0.5892318</span> <span class="p">,</span> <span class="mf">0.55351276</span><span class="p">])</span>
+   <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>  <span class="c1"># 数组的转置    </span>
+   <span class="n">array</span><span class="p">([[</span><span class="mf">0.79770216</span><span class="p">,</span> <span class="mf">0.98281623</span><span class="p">,</span> <span class="mf">0.13765588</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.56088829</span><span class="p">,</span> <span class="mf">0.69956778</span><span class="p">,</span> <span class="mf">0.13327294</span><span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.82827561</span><span class="p">,</span> <span class="mf">0.11579138</span><span class="p">,</span> <span class="mf">0.5892318</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mf">0.77196219</span><span class="p">,</span> <span class="mf">0.22625572</span><span class="p">,</span> <span class="mf">0.55351276</span><span class="p">]])</span>
+</pre></div>
+<h3 id="11.-&#25968;&#32452;&#25805;&#20316;">11. <span id="11">&#25968;&#32452;&#25805;&#20316;</span><a class="anchor-link" href="#11.-&#25968;&#32452;&#25805;&#20316;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1"># --------------------数组的合并-----------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">))</span>  <span class="c1"># vertical stacking 垂直堆积 </span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">))</span>  <span class="c1"># horizontal stacking 水平方向堆积 </span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>  <span class="c1"># 一列一列的堆积 </span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">row_stack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>  <span class="c1"># 一行一行的堆积 </span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># -------------------数组的切分----------------------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># horizontally split 水平内容分成两半</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">C</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># vertically split 竖直内容分成两半</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span> 
+<span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">C</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">A1</span><span class="p">,</span><span class="n">A2</span><span class="p">,</span><span class="n">A3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">A</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># axis=1指定竖直方向切割， [1, 3] 表示切成第1列，2-3列，最后几列</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A1</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">12</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A2</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A3</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">15</span><span class="p">]])</span>
+</pre></div>
+<h3 id="12.-&#20854;&#20182;&#30340;&#19968;&#33324;&#27010;&#24565;">12. <span id="12">&#20854;&#20182;&#30340;&#19968;&#33324;&#27010;&#24565;</span><a class="anchor-link" href="#12.-&#20854;&#20182;&#30340;&#19968;&#33324;&#27010;&#24565;">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1"># 对象的浅拷贝和深拷贝是两个不同的概念：浅拷贝之后的对象执行任何操作，原对象都不会受到影响，但是深拷贝的对象会随之改变</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>  <span class="c1"># 深拷贝，相当于C/C++中的引用</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 仍然是深拷贝</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># 利用copy函数的为浅拷贝，相当于副本</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># numpy中数组的向量化，当numpy中直接执行连个数组相乘的时候，并不会获得理想的结果，而只是对应位置的相乘，for example:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.67874916</span><span class="p">,</span> <span class="mf">0.09553741</span><span class="p">,</span> <span class="mf">0.39305942</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.02969179</span><span class="p">,</span> <span class="mf">0.97060658</span><span class="p">,</span> <span class="mf">0.93600762</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.77268671</span><span class="p">,</span> <span class="mf">0.2525612</span> <span class="p">,</span> <span class="mf">0.03904034</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]])</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># 当两个及两个以上的数组满足一定的条件之后，即使两个数组的形状不同可以进行运算，称为广播运算</span>
+<span class="c1"># 条件：他们所有的维度都可以兼容，每一个维数都必须相同，或者有一个必须为1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>       
+       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>       
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>       
+       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> 
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="c1"># A 为 4 x 4, b 为 4 x 1</span>
+<span class="c1"># A + b 运算的时候 b 相当于 </span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">row_stack</span><span class="p">((</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="c1"># 结构体数组， 数组中的元素可以是不同的，数据类型可以表示为：</span>
+<span class="c1"># bytes                     b1 </span>
+<span class="c1"># int                       i1, i2, i4, i8 </span>
+<span class="c1"># unsigned ints             u1, u2, u4, u8 </span>
+<span class="c1"># floats                    f2, f4, f8 </span>
+<span class="c1"># complex                   c8, c16 </span>
+<span class="c1"># fixed length strings      a&lt;n&gt;</span>
+
+<span class="c1"># 可以使用上述的数据类型简称</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mi">2</span><span class="o">-</span><span class="mi">2j</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Third&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3j</span><span class="p">)],</span><span class="n">dtype</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;i2, a6, f4, c8&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structured</span>
+<span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.</span><span class="o">+</span><span class="mf">2.j</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.</span><span class="o">-</span><span class="mf">2.j</span><span class="p">),</span>
+       <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Third&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.</span><span class="o">+</span><span class="mf">3.j</span><span class="p">)],</span>
+      <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;f0&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;i2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;S6&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;f4&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;c8&#39;</span><span class="p">)])</span>
+<span class="c1"># 也可以显式的显示数据类型</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mi">2</span><span class="o">-</span><span class="mi">2j</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Third&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3j</span><span class="p">)],</span><span class="n">dtype</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;int16, a6, float32, complex64&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structured</span>
+<span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.</span><span class="o">+</span><span class="mf">2.j</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.</span><span class="o">-</span><span class="mf">2.j</span><span class="p">),</span>
+       <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Third&#39;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.</span><span class="o">+</span><span class="mf">3.j</span><span class="p">)],</span>
+      <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;f0&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;i2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;S6&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;f4&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;c8&#39;</span><span class="p">)])</span>
+
+<span class="c1"># 可以用索引来获得对应的row</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structured</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.</span><span class="o">-</span><span class="mf">2.j</span><span class="p">)</span>
+<span class="c1"># 可以用结构体索引，可以引用相同类型的元素</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">structured</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span>
+<span class="n">array</span><span class="p">([</span><span class="sa">b</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;Third&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;|S6&#39;</span><span class="p">)</span>
+</pre></div>
+<blockquote><p><strong><em>Numpy 的主要操作就介绍到这里了，当然这只是沧海一粟，想要获得更多的资料，可以参考<a href="https://numpy.org">官方网站</a></em></strong></p>
+</blockquote>
 
 </div>
 </div>

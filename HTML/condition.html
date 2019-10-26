@@ -2,12 +2,12 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Other-editors--Cyberist</title>
+<title>Python f-condition--Cyberist</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+
 
 
 <style type="text/css">
@@ -13078,61 +13078,80 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;">&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;<a class="anchor-link" href="#&#20854;&#20182;&#32534;&#36753;&#22120;&#30340;&#23433;&#35013;">&#182;</a></h2><p>下面推荐的这些软件安装十分简易，只需运行对应的exe文件即可安装，这里不再赘述
- <hr></p>
-<h3 id="1.-Pycharm">1. Pycharm<a class="anchor-link" href="#1.-Pycharm">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026093713358.png" width='600' alt="Pycharm"/></p>
-<p><br></p>
-<p>访问 <a href="https://www.jetbrains.com/pycharm/">官网</a> 进行安装，社区版免费</p>
-<hr>
+<h2 id="&#26465;&#20214;&#35821;&#21477;&#30340;&#20351;&#29992;">&#26465;&#20214;&#35821;&#21477;&#30340;&#20351;&#29992;<a class="anchor-link" href="#&#26465;&#20214;&#35821;&#21477;&#30340;&#20351;&#29992;">&#182;</a></h2><ul>
+<li><p>定义：
+条件语句可以用来判断一件事情的真假，如果是真，那么便进行一项操作，如果是假，那么进行另一项操作，我们又可以称之为"选择语句"</p>
+</li>
+<li><p>使用:
+在Python中，我们可以使用<code>if</code>,<code>else</code>, <code>elif</code>三个关键词来进行语句的判断，从而实现操作</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">使用简单的if语句</span>
+<span class="sd">Author: Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Username: &quot;</span><span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Password: &quot;</span><span class="p">)</span>
 
-<h3 id="2.-Vscode">2. Vscode<a class="anchor-link" href="#2.-Vscode">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026093302339.png" width='600' alt="Vscode"/>
-<br></p>
-<p>访问 <a href="https://code.visualstudio.com/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="3.-Visual-Studio">3. Visual Studio<a class="anchor-link" href="#3.-Visual-Studio">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094820429.png" width='600' alt="Visual Studio"/>
-<br></p>
-<p>访问 <a href="https://visualstudio.microsoft.com/zh-hans/vs/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="4.-Sublime-Text">4. Sublime Text<a class="anchor-link" href="#4.-Sublime-Text">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094019480.png" width='600' alt="Sublime Text"/>
-<br></p>
-<p>访问 <a href="http://www.sublimetext.com/">官网</a> 进行安装</p>
-<hr>
-
-<h3 id="5.-Jupyter">5. Jupyter<a class="anchor-link" href="#5.-Jupyter">&#182;</a></h3><p><br>
-<img src="https://img-blog.csdnimg.cn/20191026094422749.png" width='600' alt="Jupyter"/>
-<br></p>
-<p>使用pip安装即可</p>
-<div class="highlight"><pre><span></span>pip install jupyter
-pip install notebook
+<span class="c1"># 只有当username为admin且password为123456是输出</span>
+<span class="k">if</span> <span class="n">username</span> <span class="o">==</span> <span class="s1">&#39;admin&#39;</span> <span class="ow">and</span> <span class="n">password</span> <span class="o">==</span><span class="s1">&#39;123456&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Login in&quot;</span><span class="p">)</span>
+<span class="c1"># 注意if语句后的 :, : 可以用来分隔代码，类似C/C++中的大括号</span>
+</pre></div>
+<p>如果一个语句中有多个语句下的结果都不同，我们要分别考虑输出，那么我们就需要使用<code>else</code>, <code>elif</code>来实现</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">多条件使用</span>
+<span class="sd">Author: Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input a integer: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You are right&quot;</span><span class="p">)</span>
+<span class="n">elseif</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Too big&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Too small&quot;</span><span class="p">)</span>
+</pre></div>
+<h3 id="&#32451;&#20064;">&#32451;&#20064;<a class="anchor-link" href="#&#32451;&#20064;">&#182;</a></h3><ol>
+<li>判断成绩等级<blockquote><p><strong>要求</strong>：如果输入的成绩在90分以上（含90分）输出A；80分-90分（不含90分）输出B；70分-80分（不含80分）输出C；60分-70分（不含70分）输出D；60分以下输出E。</p>
+</blockquote>
+</li>
+</ol>
+<p><em>Answer :</em></p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Author: Cyberist</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Input the grade: &#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;E&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;The grade rank is:&#39;</span><span class="p">,</span> <span class="n">grade</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>分段函数的求解</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191023192252816.bmp" width="600" /></p>
+<p><em>Answer :</em></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># math是数学函数库，中间包含很多函数</span>
+ <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input a value: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> \
+            <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">pi</span>
 </pre></div>
 <hr>
 
-<h4 id="&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;">&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;<a class="anchor-link" href="#&#20043;&#21518;&#30340;&#25945;&#31243;&#22810;&#25968;&#20351;&#29992;vscode&#65292;&#19979;&#38754;&#35762;&#35299;&#20854;&#29615;&#22659;&#37197;&#32622;">&#182;</a></h4><p><br></p>
-<ul>
-<li>打开vscode，在扩展(extensions)里面搜索Python，安装如图所示扩展</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191026095537634.png" width='600' alt="Vscode"/></p>
-<ul>
-<li>新建一个文件，我们命名为 <em>test.py</em>, 注意后缀要正确</li>
-</ul>
-<p>输入</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
-</pre></div>
-<p><img src="https://img-blog.csdnimg.cn/20191026100550190.png" width='600' alt="Vscode"/></p>
-<ul>
-<li>点击右上角的三角形符号，进行运行，如图所示，运行成功，环境配置完成</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191026101423409.png" width='600' alt="Vscode"/></p>
-<hr>
 
-<p>关注公众号，即时学习Python</p>
-<p><img src='https://img-blog.csdnimg.cn/20191026101500225.bmp' width="400" align="left"/></p>
 
 </div>
 </div>
