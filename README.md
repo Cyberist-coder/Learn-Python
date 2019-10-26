@@ -33,7 +33,7 @@
   
 <img src="./Insert-Img/wechat-logo.png" width="400" />
   </div>
-  <div align="right">
+  <div align="left">
   
 And I wll be glad if you give me a tip:
   <br/>
