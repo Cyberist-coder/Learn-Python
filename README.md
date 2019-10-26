@@ -5,7 +5,8 @@
 *Hello, thanks for visiting here, I am a undergraduate student in SJTU(located in shanghai), I make this website in order to make more people learn python easily, and at the same time, they will have a good visual sense.*
 
 ### *Who Suits*
-*Now the website is at its development, and there is a few courses, but there will be more and more, and I hope all of you can make a contribution to it*
+
+*Now the website is at its development, and there is a few courses, and it is the foundational grammar of python, so now it more suits Python beginers, but there will be more and more, and I hope all of you can make a contribution to it*
 
 ### *Website Location*
 *Now the website is  [HERE](https://cyberist-coder.github.io/learn-python/), you can visit it, and if there is any problem or mistake, please contact me*
