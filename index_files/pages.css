@@ -254,7 +254,39 @@ textarea {
 .help-link-2 {
     position: absolute;
     top: 20px;
-    right: 90px;
+    right: 70px;
+    background-color: #333;
+    color: #bbb;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: color 0.2s ease-in-out 0s;
+    -moz-transition: color 0.2s ease-in-out 0s;
+    -o-transition: color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s
+}
+.help-link-3 {
+    position: absolute;
+    top: 20px;
+    right: 135px;
+    background-color: #333;
+    color: #bbb;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: color 0.2s ease-in-out 0s;
+    -moz-transition: color 0.2s ease-in-out 0s;
+    -o-transition: color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s
+}
+.help-link-4 {
+    position: absolute;
+    top: 20px;
+    right: 185px;
     background-color: #333;
     color: #bbb;
     padding: 5px 10px;
@@ -268,7 +300,7 @@ textarea {
     transition: color 0.2s ease-in-out 0s
 }
 
-.help-link-1 .help-link-2:hover {
+.help-link-1 .help-link-2 .help-link-3 .help-link-4:hover {
     color: #fff
 }
 
