@@ -29,9 +29,13 @@
 ### *Others:*
 <div align="left">
   If you like you can follow my Wechat-Official-Account:
+  <br/>
+  
 <img src="./Insert-Img/wechat-logo.png" width="400" />
   </div>
   <div align="right">
+  
 And I wll be glad if you give me a tip:
+  <br/>
 <img src="./Insert-Img/payment.png"  width="200"/>
   </div>
