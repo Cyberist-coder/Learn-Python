@@ -35,7 +35,7 @@
   </div>
   <div align="left">
   
-<i>And I wll be glad if you give me a tip:</i>
+<i>And I will be glad if you give me a tip:</i>
   <br/>
 <img src="./Insert-Img/payment.png"  width="200"/>
   </div>
