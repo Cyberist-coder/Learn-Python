@@ -28,10 +28,10 @@
 
 ### *Others:*
 <div align="left">
-  <i>If you like you can follow my Wechat-Official-Account:</i>
+  If you like you can follow my Wechat-Official-Account:
 <img src="./Insert-Img/wechat-logo.png" width="400" />
   </div>
   <div align="right">
-<i>And I wll be glad if you give me a tip:</i>
+And I wll be glad if you give me a tip:
 <img src="./Insert-Img/payment.png"  width="200"/>
   </div>
