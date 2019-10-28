@@ -2,7 +2,7 @@
 
 ### *Introduction:*
 
-*Hello, thanks for visiting here, I am a undergraduate student in SJTU(located in shanghai), I make this website in order to make more people learn python easily, and at the same time, they will have a good visual sense.*
+*Hello, thanks for visiting here, I am a undergraduate student in SJTU(located in shanghai),mojored in  Cyber security, but I have a great interest in Python, and then I make this website in order to make more people learn python easily, and at the same time, they will have a good visual sense. But as a matter of fact, I am not good at it, but I believe as time goes by, I will finally master it with high proficiency, and at the same time you can learn from here.*
 
 ### *Who Suits*
 
