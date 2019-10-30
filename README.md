@@ -33,9 +33,8 @@
   
 <img src="./Insert-Img/wechat-logo.png" width="400" />
   </div>
-  <div align="left">
+  <div>
   
-<i>And I will be glad if you give me a tip:</i>
-  <br/>
-<img src="./Insert-Img/payment.png"  width="200"/>
+
+
   </div>
