@@ -58,7 +58,7 @@ window.onload = function () {
     var color = 0
     function change_color(){
         item.style.backgroundColor = '#'+ color;
-        color += 1 ;
+        color += (color+1)%255255 ;
     }
     setInterval(change_color,1)
     
